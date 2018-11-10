@@ -1,0 +1,17 @@
+{
+  "name": "firebase-verify-token-middleware",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=8"
+  },
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
