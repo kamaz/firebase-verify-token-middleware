@@ -4,13 +4,27 @@
   "engines": {
     "node": ">=8"
   },
-  "description": "",
+  "description": "An express middleware to simplify a firebase authentication process.",
+  "keywords": [
+    "firebase",
+    "authentication",
+    "express",
+    "middleware",
+    "firebase authentication",
+    "token",
+    "verifyIdToken",
+    "verify"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kamaz/firebase-verify-token-middleware.git"
+  },
+  "author": "Kamaz",
+  "license": "MIT",
   "devDependencies": {
     "jest": "^23.6.0"
   }
