@@ -31,6 +31,7 @@ It has been written using open/close principle so hopefully you should be able t
 | missingToken | Override response returned when token is missing. See also `errorHandler`|
 | assignTokenToRequest| Overrides how token is assign to a request object. By default uses `authZToken` token. Maybe that is not the best name and probably will change in future. |
 | extractToken | Overrides how token is extracted from a request object. | 
+| verification | Overrides verification process, mostly to be used for development, testing or integration testing.| 
 
 Example:
 ```js

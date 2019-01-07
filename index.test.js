@@ -173,6 +173,29 @@ describe('vefiryTokenInit', () => {
 			expect(req.authZToken).toBeUndefined();
 			expect(resMock._status).toBe(418);
 			expect(resMock._data).toEqual({});
+		});
+
+		it('allows to replace verification process', async () => {
+
+			const verifyToken = verifyTokenInit('admin', {
+				async verification(idToken, admin) {
+					if (admin !== 'admin') {
+						return Promise.reject("expected admin to be 'admin'")
+					}
+					if (idToken !== 'idToken') {
+						return Promise.reject("expected idToken to be 'idToken'")
+					}
+					return await idToken;
+				}
+			});
+			const moveToNext = jest.fn();
+			const req = { headers: { authorization: 'idToken' } };
+
+			await verifyToken(req, resMock, moveToNext);
+
+			expect(moveToNext).toBeCalled();
+			expect(req.authZToken).toBe('idToken');
+			expect(resMock._status).toBeUndefined();
 
 		});
 
